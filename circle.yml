@@ -1,0 +1,24 @@
+machine:
+  node:
+    version: 6.1.0
+
+dependencies:
+  post:
+    # - yarn install
+    - sh ./install.sh
+
+deployment:
+  production:
+    branch: master
+    commands:
+      # - yarn build
+      - sh ./deploy.sh
+
+general:
+  branches:
+    only:
+      - master
+
+test:
+  override:
+    - echo "No tests defined yet"
